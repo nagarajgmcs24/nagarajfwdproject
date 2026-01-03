@@ -31,12 +31,15 @@ export default function SubmitComplaint() {
       {/* Header */}
       <header className="border-b border-slate-200 bg-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <Link
+            to="/"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+          >
             <MapPin className="w-6 h-6 text-primary" />
             <h1 className="text-xl font-bold text-foreground">Fix My Ward</h1>
           </Link>
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             size="sm"
             onClick={handleLogout}
             className="flex items-center gap-2"
@@ -50,11 +53,20 @@ export default function SubmitComplaint() {
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="mb-8">
-          <Link to="/citizen-dashboard" className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
-            <span className="text-sm text-primary font-semibold">← Back to Dashboard</span>
+          <Link
+            to="/citizen-dashboard"
+            className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity"
+          >
+            <span className="text-sm text-primary font-semibold">
+              ← Back to Dashboard
+            </span>
           </Link>
-          <h1 className="text-3xl font-bold text-foreground">Report an Issue</h1>
-          <p className="text-slate-600 mt-2">Help improve your community by reporting civic problems</p>
+          <h1 className="text-3xl font-bold text-foreground">
+            Report an Issue
+          </h1>
+          <p className="text-slate-600 mt-2">
+            Help improve your community by reporting civic problems
+          </p>
         </div>
 
         <Card className="border-0 shadow-lg">
@@ -91,7 +103,7 @@ export default function SubmitComplaint() {
                 <Label htmlFor="category" className="text-sm font-medium">
                   Category
                 </Label>
-                <select 
+                <select
                   id="category"
                   className="mt-2 w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 >
@@ -125,15 +137,24 @@ export default function SubmitComplaint() {
                 </Label>
                 <div className="mt-2 border-2 border-dashed border-slate-300 rounded-lg p-6 text-center hover:border-primary transition-colors cursor-pointer">
                   <Upload className="w-8 h-8 text-slate-400 mx-auto mb-2" />
-                  <p className="text-sm text-slate-600">Click to upload or drag and drop</p>
-                  <p className="text-xs text-slate-500 mt-1">PNG, JPG, GIF up to 10MB</p>
-                  <input id="photo" type="file" accept="image/*" className="hidden" />
+                  <p className="text-sm text-slate-600">
+                    Click to upload or drag and drop
+                  </p>
+                  <p className="text-xs text-slate-500 mt-1">
+                    PNG, JPG, GIF up to 10MB
+                  </p>
+                  <input
+                    id="photo"
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                  />
                 </div>
               </div>
 
               {/* Submit Button */}
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="w-full font-semibold h-10"
                 disabled={loading}
               >
@@ -144,7 +165,8 @@ export default function SubmitComplaint() {
             <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg flex items-start gap-3">
               <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
               <p className="text-sm text-blue-800">
-                Your complaint will be reviewed by your ward councillor. You'll receive updates on its status.
+                Your complaint will be reviewed by your ward councillor. You'll
+                receive updates on its status.
               </p>
             </div>
           </div>

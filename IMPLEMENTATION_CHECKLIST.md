@@ -3,6 +3,7 @@
 ## ✅ COMPLETED - What's Been Built
 
 ### Frontend (React + Vite + Tailwind)
+
 - [x] Beautiful, modern homepage with purple theme
   - [x] Hero section with compelling copy
   - [x] "How It Works" section with 3-step process
@@ -41,6 +42,7 @@
   - [x] Smooth transitions
 
 ### Backend (Node.js + Express)
+
 - [x] Database Connection
   - [x] MongoDB connection setup
   - [x] Connection pooling ready
@@ -81,6 +83,7 @@
   - [x] Npm script: `npm run seed:councillors`
 
 ### Configuration & Documentation
+
 - [x] Environment setup (`.env.example`)
 - [x] Complete setup guide (`SETUP_GUIDE.md`)
 - [x] Quick start guide (`QUICK_START.md`)
@@ -94,6 +97,7 @@
 ## 🚀 NEXT STEPS - What You Need to Do
 
 ### Step 1: Install & Configure (5 minutes)
+
 - [ ] Run `npm install` to install all dependencies
 - [ ] Copy `.env.example` to `.env`
 - [ ] Add your MongoDB URI to `.env`
@@ -102,6 +106,7 @@
 - [ ] Change `JWT_SECRET` to a strong random string
 
 ### Step 2: Set Up MongoDB (10 minutes)
+
 - [ ] **Option A - Local MongoDB**
   - [ ] Install MongoDB Community Edition
   - [ ] Start MongoDB service (`mongod`)
@@ -112,11 +117,13 @@
   - [ ] Update `.env` with connection string
 
 ### Step 3: Seed Database (2 minutes)
+
 - [ ] Run: `npm run seed:councillors`
 - [ ] Verify output shows 5 councillors created
 - [ ] Save the login credentials shown (or refer to `QUICK_START.md`)
 
 ### Step 4: Start Development Server (1 minute)
+
 - [ ] Run: `npm run dev`
 - [ ] Open: http://localhost:5173
 - [ ] Verify homepage loads with purple theme
@@ -124,6 +131,7 @@
 ### Step 5: Test the Application (15 minutes)
 
 **Test Citizen Flow:**
+
 - [ ] Visit homepage
 - [ ] Click "Sign Up"
 - [ ] Create account with:
@@ -135,6 +143,7 @@
 - [ ] Verify you see citizen dashboard
 
 **Test Councillor Flow:**
+
 - [ ] Go back to homepage
 - [ ] Click "Councillor Login"
 - [ ] Use credentials:
@@ -144,11 +153,13 @@
 - [ ] Verify NO signup option available
 
 **Test Forms:**
+
 - [ ] As citizen, click "Report New Issue"
 - [ ] Fill form (all fields optional for now, pending backend completion)
 - [ ] Verify form submits without errors
 
 ### Step 6: Verify Backend Setup (5 minutes)
+
 - [ ] Test API health: `curl http://localhost:3000/api/health`
 - [ ] Check database connection in terminal logs
 - [ ] Verify no error messages
@@ -158,18 +169,24 @@
 ## ⚙️ OPTIONAL CUSTOMIZATIONS
 
 ### Change Primary Color
+
 Edit `client/global.css` line 18:
+
 ```css
 --primary: YOUR_HUE YOUR_SATURATION YOUR_LIGHTNESS;
 ```
+
 Examples:
+
 - Blue: `202.3 100% 50.2%`
 - Red: `0 84.2% 60.2%`
 - Green: `142.1 70.6% 45.3%`
 
 ### Add More Councillors
+
 1. Edit `server/seed/councillorSeed.js`
 2. Add to `sampleCouncillors` array:
+
 ```javascript
 {
   name: "Your Name",
@@ -180,16 +197,21 @@ Examples:
   phoneNumber: "+91-XXXXX"
 }
 ```
+
 3. Run: `npm run seed:councillors`
 
 ### Change Application Name
+
 Find and replace "Fix My Ward" with your name in:
+
 - [ ] `client/pages/Index.tsx`
 - [ ] `client/pages/*.tsx` (various pages)
 - [ ] Documentation files
 
 ### Customize City/Wards
+
 Edit `server/seed/councillorSeed.js`:
+
 - [ ] Change `city: "Mumbai"` to your city
 - [ ] Change `wardNumber: "Ward X"` format
 - [ ] Update sample councillor names/emails
@@ -199,6 +221,7 @@ Edit `server/seed/councillorSeed.js`:
 ## 🔧 AFTER BASIC SETUP - ENHANCEMENTS TO CONSIDER
 
 ### Immediate (For Production Readiness)
+
 - [ ] Implement photo upload (use multer + AWS S3 or Cloudinary)
 - [ ] Add form validation on frontend
 - [ ] Implement pagination for complaint lists
@@ -209,6 +232,7 @@ Edit `server/seed/councillorSeed.js`:
 - [ ] Add rate limiting to APIs
 
 ### Nice to Have
+
 - [ ] Real-time notifications (Socket.io)
 - [ ] Google Maps integration
 - [ ] Auto-detect location from GPS
@@ -219,6 +243,7 @@ Edit `server/seed/councillorSeed.js`:
 - [ ] Email digests for councillors
 
 ### Deployment
+
 - [ ] Build frontend: `npm run build:client`
 - [ ] Build backend: `npm run build:server`
 - [ ] Deploy to Netlify/Vercel (frontend)
@@ -231,6 +256,7 @@ Edit `server/seed/councillorSeed.js`:
 ## 🧪 TESTING CHECKLIST
 
 ### Frontend Testing
+
 - [ ] Homepage loads without errors
 - [ ] All buttons navigate correctly
 - [ ] Forms accept input
@@ -239,6 +265,7 @@ Edit `server/seed/councillorSeed.js`:
 - [ ] Navigation works between pages
 
 ### Backend Testing
+
 - [ ] API health endpoint responds
 - [ ] Database connection successful
 - [ ] Seed script runs without errors
@@ -246,6 +273,7 @@ Edit `server/seed/councillorSeed.js`:
 - [ ] Authorization middleware works
 
 ### Security Testing
+
 - [ ] No councillor signup endpoint
 - [ ] Councillors can't view other wards' complaints (when implemented)
 - [ ] Citizens can't access admin functions
@@ -273,16 +301,16 @@ Edit `server/seed/councillorSeed.js`:
 
 ## 🚨 COMMON ISSUES & SOLUTIONS
 
-| Issue | Solution |
-|-------|----------|
-| `Cannot find module 'mongoose'` | Run `npm install` |
-| MongoDB connection error | Check if mongod is running |
-| Port 3000 already in use | Change PORT in `.env` |
-| Seed script fails | Check MongoDB is connected |
-| Councillor login fails | Verify exact email/password (case-sensitive) |
-| "No token provided" error | Make sure to log in first |
-| CSS not loading | Clear browser cache, reload |
-| API 500 error | Check server logs for errors |
+| Issue                           | Solution                                     |
+| ------------------------------- | -------------------------------------------- |
+| `Cannot find module 'mongoose'` | Run `npm install`                            |
+| MongoDB connection error        | Check if mongod is running                   |
+| Port 3000 already in use        | Change PORT in `.env`                        |
+| Seed script fails               | Check MongoDB is connected                   |
+| Councillor login fails          | Verify exact email/password (case-sensitive) |
+| "No token provided" error       | Make sure to log in first                    |
+| CSS not loading                 | Clear browser cache, reload                  |
+| API 500 error                   | Check server logs for errors                 |
 
 ---
 
@@ -299,6 +327,7 @@ Edit `server/seed/councillorSeed.js`:
 ## ✨ KEY FEATURES SUMMARY
 
 ### Security Features ✅
+
 - No councillor signup (login-only)
 - JWT authentication
 - Bcrypt password hashing
@@ -307,6 +336,7 @@ Edit `server/seed/councillorSeed.js`:
 - Secure API endpoints
 
 ### User Features ✅
+
 - Citizen signup/login
 - Complaint submission with photo
 - Status tracking (Pending/In Progress/Resolved)
@@ -315,6 +345,7 @@ Edit `server/seed/councillorSeed.js`:
 - Real-time updates (when backend complete)
 
 ### Technical Features ✅
+
 - React 18 frontend
 - Express backend
 - MongoDB database
@@ -327,6 +358,7 @@ Edit `server/seed/councillorSeed.js`:
 ## 🎉 YOU'RE ALL SET!
 
 Everything is ready to go. Start with:
+
 ```bash
 npm run dev
 ```

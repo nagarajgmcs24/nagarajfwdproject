@@ -114,12 +114,12 @@ npm run seed:councillors
 
 This will create 5 sample councillors:
 
-| Email | Password | Ward | City |
-|-------|----------|------|------|
+| Email                      | Password       | Ward   | City   |
+| -------------------------- | -------------- | ------ | ------ |
 | rajesh.ward1@municipal.gov | SecurePass123! | Ward 1 | Mumbai |
-| priya.ward2@municipal.gov | SecurePass456! | Ward 2 | Mumbai |
-| amit.ward3@municipal.gov | SecurePass789! | Ward 3 | Mumbai |
-| neha.ward4@municipal.gov | SecurePass012! | Ward 4 | Mumbai |
+| priya.ward2@municipal.gov  | SecurePass456! | Ward 2 | Mumbai |
+| amit.ward3@municipal.gov   | SecurePass789! | Ward 3 | Mumbai |
+| neha.ward4@municipal.gov   | SecurePass012! | Ward 4 | Mumbai |
 | vikram.ward5@municipal.gov | SecurePass345! | Ward 5 | Mumbai |
 
 ### 5. Start Development Server
@@ -129,6 +129,7 @@ npm run dev
 ```
 
 The application will be available at:
+
 - **Frontend**: http://localhost:5173
 - **Backend**: http://localhost:3000
 
@@ -275,6 +276,7 @@ Error: connect ECONNREFUSED
 ```
 
 **Solution**: Ensure MongoDB is running
+
 ```bash
 # Check if mongod is running
 mongod --version
@@ -290,6 +292,7 @@ mongod
 ### Councillor "Login Failed"
 
 **Solution**: Use exact credentials from seed output. Check:
+
 - Email is lowercase
 - Password is case-sensitive
 - Email exists in database
@@ -308,6 +311,7 @@ To add more councillors:
 3. Run: `npm run seed:councillors`
 
 Example:
+
 ```javascript
 {
   name: "New Councillor Name",
@@ -324,13 +328,15 @@ Example:
 ### Change Primary Color
 
 Edit `client/global.css`:
+
 ```css
---primary: 262.1 80% 50.6%;  /* Change these HSL values */
+--primary: 262.1 80% 50.6%; /* Change these HSL values */
 ```
 
 ### Change City/Ward Info
 
 Edit `server/seed/councillorSeed.js`:
+
 ```javascript
 city: "YourCity",  // Change city
 wardNumber: "Ward X",  // Change ward naming

@@ -58,10 +58,14 @@ async function seedCouncillors() {
 
     for (const councillorData of sampleCouncillors) {
       // Check if councillor already exists
-      const existingCouncillor = await Councillor.findOne({ email: councillorData.email });
+      const existingCouncillor = await Councillor.findOne({
+        email: councillorData.email,
+      });
 
       if (existingCouncillor) {
-        console.log(`⏭️  Councillor ${councillorData.email} already exists. Skipping...`);
+        console.log(
+          `⏭️  Councillor ${councillorData.email} already exists. Skipping...`,
+        );
         continue;
       }
 
@@ -77,7 +81,9 @@ async function seedCouncillors() {
       });
 
       await councillor.save();
-      console.log(`✅ Created councillor: ${councillorData.name} (${councillorData.wardNumber})`);
+      console.log(
+        `✅ Created councillor: ${councillorData.name} (${councillorData.wardNumber})`,
+      );
     }
 
     console.log("\n🎉 Councillor seeding completed!");

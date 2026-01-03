@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MapPin, Users, CheckCircle2, Shield, AlertCircle, FileText } from "lucide-react";
+import {
+  MapPin,
+  Users,
+  CheckCircle2,
+  Shield,
+  AlertCircle,
+  FileText,
+} from "lucide-react";
 
 export default function Index() {
   return (
@@ -28,11 +35,14 @@ export default function Index() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Your Community,<br />
+              Your Community,
+              <br />
               <span className="text-primary">Your Voice</span>
             </h2>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Fix My Ward is a transparent platform empowering citizens to report civic issues and enabling ward councillors to resolve them efficiently. Together, we build better communities.
+              Fix My Ward is a transparent platform empowering citizens to
+              report civic issues and enabling ward councillors to resolve them
+              efficiently. Together, we build better communities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/citizen-signup">
@@ -41,7 +51,11 @@ export default function Index() {
                 </Button>
               </Link>
               <a href="#how-it-works">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto"
+                >
                   Learn More
                 </Button>
               </a>
@@ -71,9 +85,12 @@ export default function Index() {
               <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-6">
                 <FileText className="w-6 h-6 text-primary" />
               </div>
-              <h4 className="text-xl font-semibold text-foreground mb-3">Report Issue</h4>
+              <h4 className="text-xl font-semibold text-foreground mb-3">
+                Report Issue
+              </h4>
               <p className="text-slate-600 leading-relaxed">
-                Citizens submit complaints with photos, descriptions, categories, and location details. Every issue matters.
+                Citizens submit complaints with photos, descriptions,
+                categories, and location details. Every issue matters.
               </p>
             </div>
 
@@ -82,9 +99,12 @@ export default function Index() {
               <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-6">
                 <Shield className="w-6 h-6 text-primary" />
               </div>
-              <h4 className="text-xl font-semibold text-foreground mb-3">Councillor Review</h4>
+              <h4 className="text-xl font-semibold text-foreground mb-3">
+                Councillor Review
+              </h4>
               <p className="text-slate-600 leading-relaxed">
-                Ward councillors review complaints, assign priorities, and update statuses. Transparency at every step.
+                Ward councillors review complaints, assign priorities, and
+                update statuses. Transparency at every step.
               </p>
             </div>
 
@@ -93,9 +113,12 @@ export default function Index() {
               <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-6">
                 <CheckCircle2 className="w-6 h-6 text-success" />
               </div>
-              <h4 className="text-xl font-semibold text-foreground mb-3">Resolution</h4>
+              <h4 className="text-xl font-semibold text-foreground mb-3">
+                Resolution
+              </h4>
               <p className="text-slate-600 leading-relaxed">
-                Citizens track progress in real-time. Once resolved, they receive updates and can view remarks from councillors.
+                Citizens track progress in real-time. Once resolved, they
+                receive updates and can view remarks from councillors.
               </p>
             </div>
           </div>
@@ -112,7 +135,9 @@ export default function Index() {
           {/* Citizens Feature */}
           <div className="bg-white rounded-xl p-8 border border-slate-200">
             <Users className="w-8 h-8 text-primary mb-4" />
-            <h4 className="text-2xl font-semibold text-foreground mb-4">For Citizens</h4>
+            <h4 className="text-2xl font-semibold text-foreground mb-4">
+              For Citizens
+            </h4>
             <ul className="space-y-3 text-slate-600">
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold mt-1">✓</span>
@@ -140,7 +165,9 @@ export default function Index() {
           {/* Councillors Feature */}
           <div className="bg-white rounded-xl p-8 border border-slate-200">
             <Shield className="w-8 h-8 text-primary mb-4" />
-            <h4 className="text-2xl font-semibold text-foreground mb-4">For Ward Councillors</h4>
+            <h4 className="text-2xl font-semibold text-foreground mb-4">
+              For Ward Councillors
+            </h4>
             <ul className="space-y-3 text-slate-600">
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold mt-1">✓</span>
@@ -175,8 +202,18 @@ export default function Index() {
           </h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {["Road", "Water", "Garbage", "Drainage", "Electricity", "Others"].map((category) => (
-              <div key={category} className="bg-white rounded-lg p-6 border border-slate-200 text-center hover:shadow-md transition-shadow">
+            {[
+              "Road",
+              "Water",
+              "Garbage",
+              "Drainage",
+              "Electricity",
+              "Others",
+            ].map((category) => (
+              <div
+                key={category}
+                className="bg-white rounded-lg p-6 border border-slate-200 text-center hover:shadow-md transition-shadow"
+              >
                 <AlertCircle className="w-8 h-8 text-primary mx-auto mb-3" />
                 <p className="font-semibold text-foreground">{category}</p>
               </div>
@@ -192,7 +229,8 @@ export default function Index() {
             Ready to Make a Difference?
           </h3>
           <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-            Join thousands of citizens reporting issues and building better communities
+            Join thousands of citizens reporting issues and building better
+            communities
           </p>
           <Link to="/citizen-signup">
             <Button size="lg" variant="secondary" className="font-semibold">
@@ -206,11 +244,19 @@ export default function Index() {
       <footer className="border-t border-slate-200 bg-white py-8 mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-            <p>&copy; 2024 Fix My Ward. Building better communities together.</p>
+            <p>
+              &copy; 2024 Fix My Ward. Building better communities together.
+            </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition-colors">Privacy</a>
-              <a href="#" className="hover:text-primary transition-colors">Terms</a>
-              <a href="#" className="hover:text-primary transition-colors">Contact</a>
+              <a href="#" className="hover:text-primary transition-colors">
+                Privacy
+              </a>
+              <a href="#" className="hover:text-primary transition-colors">
+                Terms
+              </a>
+              <a href="#" className="hover:text-primary transition-colors">
+                Contact
+              </a>
             </div>
           </div>
         </div>

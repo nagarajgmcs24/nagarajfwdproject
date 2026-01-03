@@ -65,11 +65,18 @@ export default function CitizenLogin() {
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="mb-8">
-          <Link to="/" className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
-            <span className="text-sm text-primary font-semibold">← Back to Home</span>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity"
+          >
+            <span className="text-sm text-primary font-semibold">
+              ← Back to Home
+            </span>
           </Link>
           <h1 className="text-3xl font-bold text-foreground">Citizen Login</h1>
-          <p className="text-slate-600 mt-2">Sign in to track your complaints and contribute to your community</p>
+          <p className="text-slate-600 mt-2">
+            Sign in to track your complaints and contribute to your community
+          </p>
         </div>
 
         <Card className="border-0 shadow-lg">
@@ -117,7 +124,10 @@ export default function CitizenLogin() {
               {/* Remember Me & Forgot Password */}
               <div className="flex items-center justify-between">
                 <label className="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" className="w-4 h-4 rounded border-slate-300" />
+                  <input
+                    type="checkbox"
+                    className="w-4 h-4 rounded border-slate-300"
+                  />
                   <span className="text-sm text-slate-600">Remember me</span>
                 </label>
                 <a href="#" className="text-sm text-primary hover:underline">
@@ -126,8 +136,8 @@ export default function CitizenLogin() {
               </div>
 
               {/* Submit Button */}
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="w-full mt-6 font-semibold h-10"
                 disabled={loading}
               >
@@ -139,7 +149,10 @@ export default function CitizenLogin() {
             <div className="mt-6 text-center">
               <p className="text-sm text-slate-600">
                 Don't have an account?{" "}
-                <Link to="/citizen-signup" className="text-primary font-semibold hover:underline">
+                <Link
+                  to="/citizen-signup"
+                  className="text-primary font-semibold hover:underline"
+                >
                   Sign up
                 </Link>
               </p>
@@ -151,7 +164,10 @@ export default function CitizenLogin() {
         <div className="mt-6 text-center">
           <p className="text-sm text-slate-600">
             Are you a councillor?{" "}
-            <Link to="/councillor-login" className="text-primary font-semibold hover:underline">
+            <Link
+              to="/councillor-login"
+              className="text-primary font-semibold hover:underline"
+            >
               Log in here
             </Link>
           </p>

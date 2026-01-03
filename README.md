@@ -30,32 +30,34 @@ Visit: **http://localhost:5173**
 ## 🎯 Key Features
 
 ### For Citizens
+
 ✅ Sign up and create account  
 ✅ Report issues with photo, description, and category  
 ✅ Select or auto-detect ward location  
 ✅ Track complaint status in real-time  
-✅ View public complaints in their ward  
+✅ View public complaints in their ward
 
 ### For Ward Councillors
+
 ✅ **Login ONLY** (no signup allowed)  
 ✅ View complaints for assigned ward  
 ✅ Update complaint status  
 ✅ Add remarks and resolution details  
-✅ View ward statistics and metrics  
+✅ View ward statistics and metrics
 
 ---
 
 ## 📱 Pages & Routes
 
-| Page | Route | Purpose |
-|------|-------|---------|
-| Homepage | `/` | Intro, features, login links |
-| Citizen Signup | `/citizen-signup` | Create account |
-| Citizen Login | `/citizen-login` | Sign in |
-| Councillor Login | `/councillor-login` | **Login only, no signup** |
-| Citizen Dashboard | `/citizen-dashboard` | View complaints, report issues |
-| Councillor Dashboard | `/councillor-dashboard` | Manage ward complaints |
-| Submit Complaint | `/submit-complaint` | Report new issue |
+| Page                 | Route                   | Purpose                        |
+| -------------------- | ----------------------- | ------------------------------ |
+| Homepage             | `/`                     | Intro, features, login links   |
+| Citizen Signup       | `/citizen-signup`       | Create account                 |
+| Citizen Login        | `/citizen-login`        | Sign in                        |
+| Councillor Login     | `/councillor-login`     | **Login only, no signup**      |
+| Citizen Dashboard    | `/citizen-dashboard`    | View complaints, report issues |
+| Councillor Dashboard | `/councillor-dashboard` | Manage ward complaints         |
+| Submit Complaint     | `/submit-complaint`     | Report new issue               |
 
 ---
 
@@ -76,16 +78,19 @@ Ward 5: vikram.ward5@municipal.gov / SecurePass345!
 ## 🗄️ Database Models
 
 ### Citizen
+
 ```
 name, email, password, wardNumber, phoneNumber, city
 ```
 
 ### Councillor
+
 ```
 name, email, password, wardNumber, city, phoneNumber, isActive
 ```
 
 ### Complaint
+
 ```
 title, description, category, wardNumber, location, imageUrl,
 status, reportedBy, assignedCouncillor, remarks, priority
@@ -96,16 +101,19 @@ status, reportedBy, assignedCouncillor, remarks, priority
 ## 🔌 API Endpoints
 
 ### Citizen Auth
+
 - `POST /api/citizen/signup` - Register
 - `POST /api/citizen/login` - Login
 - `GET /api/citizen/profile` - Get profile
 
 ### Councillor Auth
+
 - `POST /api/councillor/login` - Login only
 - `GET /api/councillor/profile` - Get profile
 - ❌ No signup endpoint
 
 ### Complaints
+
 - `POST /api/complaints/create` - Submit complaint
 - `GET /api/complaints/my-complaints` - User's complaints
 - `GET /api/complaints/ward-complaints` - Ward's complaints
@@ -117,13 +125,13 @@ status, reportedBy, assignedCouncillor, remarks, priority
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
+| Layer    | Technology                   |
+| -------- | ---------------------------- |
 | Frontend | React 18, Vite, Tailwind CSS |
-| Backend | Node.js, Express 5 |
-| Database | MongoDB |
-| Auth | JWT + Bcrypt |
-| UI | shadcn/ui components |
+| Backend  | Node.js, Express 5           |
+| Database | MongoDB                      |
+| Auth     | JWT + Bcrypt                 |
+| UI       | shadcn/ui components         |
 
 ---
 
@@ -154,7 +162,7 @@ Read these files for detailed information:
 ✅ **JWT authentication** - Secure token-based access  
 ✅ **Role-based access** - Separate routes for citizens/councillors  
 ✅ **Ward isolation** - Councillors see only their ward  
-✅ **Input validation** - All inputs validated  
+✅ **Input validation** - All inputs validated
 
 ---
 
@@ -197,12 +205,14 @@ npm run format.fix         # Format code
 ## 🧪 Testing
 
 ### Test as Citizen
+
 1. Homepage → "Sign Up"
 2. Create account
 3. Log in
 4. View dashboard
 
 ### Test as Councillor
+
 1. Homepage → "Councillor Login"
 2. Use sample credentials
 3. View ward dashboard
@@ -212,16 +222,19 @@ npm run format.fix         # Format code
 ## 🚀 Deployment
 
 ### Frontend (Netlify/Vercel)
+
 ```bash
 npm run build:client
 ```
 
 ### Backend (Heroku/Railway)
+
 ```bash
 npm run build:server
 ```
 
 Set environment variables in production:
+
 - `MONGODB_URI`
 - `JWT_SECRET` (strong random string)
 - `NODE_ENV=production`
@@ -230,13 +243,13 @@ Set environment variables in production:
 
 ## ❓ Troubleshooting
 
-| Problem | Solution |
-|---------|----------|
-| MongoDB error | Ensure mongod is running |
-| Port conflict | Change PORT in .env |
+| Problem                | Solution                              |
+| ---------------------- | ------------------------------------- |
+| MongoDB error          | Ensure mongod is running              |
+| Port conflict          | Change PORT in .env                   |
 | Councillor login fails | Check email/password (case-sensitive) |
-| Seed script fails | Verify MongoDB connection |
-| Module not found | Run `npm install` |
+| Seed script fails      | Verify MongoDB connection             |
+| Module not found       | Run `npm install`                     |
 
 See `SETUP_GUIDE.md` for more help.
 
@@ -269,6 +282,7 @@ See `SETUP_GUIDE.md` for more help.
 ## 🎓 College Project Ready
 
 This implementation is suitable for:
+
 - ✅ Clean code structure
 - ✅ Proper documentation
 - ✅ Complete feature set
@@ -298,5 +312,5 @@ npm run dev
 
 ---
 
-*Built with React, Node.js, MongoDB, and Tailwind CSS*  
-*Designed for modern, efficient community problem tracking*
+_Built with React, Node.js, MongoDB, and Tailwind CSS_  
+_Designed for modern, efficient community problem tracking_

@@ -11,11 +11,15 @@ router.post("/signup", async (req, res) => {
 
     // Validation
     if (!name || !email || !password) {
-      return res.status(400).json({ message: "Name, email, and password are required" });
+      return res
+        .status(400)
+        .json({ message: "Name, email, and password are required" });
     }
 
     // Check if citizen already exists
-    const existingCitizen = await Citizen.findOne({ email: email.toLowerCase() });
+    const existingCitizen = await Citizen.findOne({
+      email: email.toLowerCase(),
+    });
     if (existingCitizen) {
       return res.status(409).json({ message: "Email already registered" });
     }
@@ -51,7 +55,9 @@ router.post("/login", async (req, res) => {
 
     // Validation
     if (!email || !password) {
-      return res.status(400).json({ message: "Email and password are required" });
+      return res
+        .status(400)
+        .json({ message: "Email and password are required" });
     }
 
     // Find citizen
@@ -93,7 +99,9 @@ router.get("/profile", async (req, res) => {
     res.json(citizen.toJSON());
   } catch (error) {
     console.error("Profile fetch error:", error);
-    res.status(500).json({ message: "Failed to fetch profile", error: error.message });
+    res
+      .status(500)
+      .json({ message: "Failed to fetch profile", error: error.message });
   }
 });
 

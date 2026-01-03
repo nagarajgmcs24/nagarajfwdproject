@@ -72,7 +72,7 @@ const ComplaintSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 // Create index for ward number for efficient querying

@@ -29,7 +29,10 @@ const App = () => (
           <Route path="/citizen-login" element={<CitizenLogin />} />
           <Route path="/councillor-login" element={<CouncillorLogin />} />
           <Route path="/citizen-dashboard" element={<CitizenDashboard />} />
-          <Route path="/councillor-dashboard" element={<CouncillorDashboard />} />
+          <Route
+            path="/councillor-dashboard"
+            element={<CouncillorDashboard />}
+          />
           <Route path="/submit-complaint" element={<SubmitComplaint />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

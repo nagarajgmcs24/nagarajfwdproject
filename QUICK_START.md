@@ -3,22 +3,26 @@
 ## ⚡ 30-Second Setup
 
 ### 1. Install Dependencies
+
 ```bash
 npm install
 ```
 
 ### 2. Set Up Environment
+
 ```bash
 cp .env.example .env
 # Edit .env and add your MongoDB URI (local or cloud)
 ```
 
 ### 3. Seed Councillors
+
 ```bash
 npm run seed:councillors
 ```
 
 ### 4. Start Development
+
 ```bash
 npm run dev
 ```
@@ -30,12 +34,14 @@ Visit: http://localhost:5173
 ## 🎯 Quick Test
 
 ### Test as Citizen
+
 1. Homepage → "Sign Up" → Create account
 2. Log in with your credentials
 3. Click "Report Issue" to submit a complaint
 4. View on dashboard
 
 ### Test as Councillor
+
 1. Homepage → "Councillor Login"
 2. Use these credentials:
    - Email: `rajesh.ward1@municipal.gov`
@@ -48,6 +54,7 @@ Visit: http://localhost:5173
 ## 📦 MongoDB Setup (Choose One)
 
 ### Option A: Local MongoDB
+
 ```bash
 # macOS
 brew install mongodb-community
@@ -64,10 +71,12 @@ MONGODB_URI=mongodb://localhost:27017/fix-my-ward
 ```
 
 ### Option B: MongoDB Atlas (Cloud)
+
 1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 2. Create free account & cluster
 3. Get connection string
 4. In `.env`:
+
 ```
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/fix-my-ward
 ```
@@ -77,6 +86,7 @@ MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/fix-my-ward
 ## 🚀 API Testing
 
 ### Create Complaint (Citizen)
+
 ```bash
 curl -X POST http://localhost:3000/api/complaints/create \
   -H "Content-Type: application/json" \
@@ -91,12 +101,14 @@ curl -X POST http://localhost:3000/api/complaints/create \
 ```
 
 ### Get Ward Complaints (Councillor)
+
 ```bash
 curl -X GET http://localhost:3000/api/complaints/ward-complaints \
   -H "Authorization: YOUR_JWT_TOKEN"
 ```
 
 ### Update Complaint (Councillor)
+
 ```bash
 curl -X PUT http://localhost:3000/api/complaints/COMPLAINT_ID/update-status \
   -H "Content-Type: application/json" \
@@ -112,18 +124,18 @@ curl -X PUT http://localhost:3000/api/complaints/COMPLAINT_ID/update-status \
 
 ## 📁 Important Files
 
-| File | Purpose |
-|------|---------|
-| `client/pages/Index.tsx` | Beautiful homepage |
-| `client/pages/CitizenSignup.tsx` | Citizen registration |
-| `client/pages/CouncillorLogin.tsx` | Councillor login (no signup!) |
-| `server/models/Citizen.js` | Citizen database schema |
-| `server/models/Councillor.js` | Councillor database schema |
-| `server/models/Complaint.js` | Complaint database schema |
-| `server/routes/citizenAuthRoutes.js` | Citizen auth APIs |
-| `server/routes/councillorAuthRoutes.js` | Councillor auth APIs |
-| `server/routes/complaintRoutes.js` | Complaint management APIs |
-| `server/seed/councillorSeed.js` | Pre-load sample councillors |
+| File                                    | Purpose                       |
+| --------------------------------------- | ----------------------------- |
+| `client/pages/Index.tsx`                | Beautiful homepage            |
+| `client/pages/CitizenSignup.tsx`        | Citizen registration          |
+| `client/pages/CouncillorLogin.tsx`      | Councillor login (no signup!) |
+| `server/models/Citizen.js`              | Citizen database schema       |
+| `server/models/Councillor.js`           | Councillor database schema    |
+| `server/models/Complaint.js`            | Complaint database schema     |
+| `server/routes/citizenAuthRoutes.js`    | Citizen auth APIs             |
+| `server/routes/councillorAuthRoutes.js` | Councillor auth APIs          |
+| `server/routes/complaintRoutes.js`      | Complaint management APIs     |
+| `server/seed/councillorSeed.js`         | Pre-load sample councillors   |
 
 ---
 
@@ -144,19 +156,25 @@ Ward 5: vikram.ward5@municipal.gov / SecurePass345!
 ## 🎨 Customization
 
 ### Change Primary Color
+
 Edit `client/global.css`, line 18:
+
 ```css
---primary: 262.1 80% 50.6%;  /* Change HSL values */
+--primary: 262.1 80% 50.6%; /* Change HSL values */
 ```
 
 ### Add More Councillors
+
 Edit `server/seed/councillorSeed.js` and add to `sampleCouncillors` array, then run:
+
 ```bash
 npm run seed:councillors
 ```
 
 ### Change Port
+
 Edit `.env`:
+
 ```
 PORT=8000
 ```
@@ -165,19 +183,20 @@ PORT=8000
 
 ## ❓ Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| "Cannot find module 'mongoose'" | Run `npm install` |
-| MongoDB connection error | Check if `mongod` is running |
-| "Invalid token" on API call | Log in again to get new JWT |
-| Councillor login fails | Check exact email/password (case-sensitive) |
-| Port already in use | Change PORT in `.env` |
+| Issue                           | Solution                                    |
+| ------------------------------- | ------------------------------------------- |
+| "Cannot find module 'mongoose'" | Run `npm install`                           |
+| MongoDB connection error        | Check if `mongod` is running                |
+| "Invalid token" on API call     | Log in again to get new JWT                 |
+| Councillor login fails          | Check exact email/password (case-sensitive) |
+| Port already in use             | Change PORT in `.env`                       |
 
 ---
 
 ## 📚 What Was Built
 
 ### Frontend (React + Vite + Tailwind)
+
 - ✅ Modern homepage with features & CTA
 - ✅ Citizen signup/login pages
 - ✅ Councillor login only (NO signup)
@@ -186,6 +205,7 @@ PORT=8000
 - ✅ Beautiful color scheme (purple primary)
 
 ### Backend (Node.js + Express)
+
 - ✅ JWT authentication system
 - ✅ Separate routes for citizens & councillors
 - ✅ Complaint CRUD operations
@@ -194,6 +214,7 @@ PORT=8000
 - ✅ MongoDB models & schemas
 
 ### Database (MongoDB)
+
 - ✅ Citizen collection
 - ✅ Councillor collection (pre-seeded)
 - ✅ Complaint collection with indexing

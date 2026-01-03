@@ -11,7 +11,9 @@ router.post("/login", async (req, res) => {
 
     // Validation
     if (!email || !password) {
-      return res.status(400).json({ message: "Email and password are required" });
+      return res
+        .status(400)
+        .json({ message: "Email and password are required" });
     }
 
     // Find councillor
@@ -22,7 +24,9 @@ router.post("/login", async (req, res) => {
 
     // Check if councillor is active
     if (!councillor.isActive) {
-      return res.status(403).json({ message: "Councillor account is inactive" });
+      return res
+        .status(403)
+        .json({ message: "Councillor account is inactive" });
     }
 
     // Compare password
@@ -58,7 +62,9 @@ router.get("/profile", async (req, res) => {
     res.json(councillor.toJSON());
   } catch (error) {
     console.error("Profile fetch error:", error);
-    res.status(500).json({ message: "Failed to fetch profile", error: error.message });
+    res
+      .status(500)
+      .json({ message: "Failed to fetch profile", error: error.message });
   }
 });
 

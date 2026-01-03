@@ -30,7 +30,12 @@ export default function CitizenSignup() {
     setError("");
 
     // Validation
-    if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.password ||
+      !formData.confirmPassword
+    ) {
       setError("All fields are required");
       return;
     }
@@ -84,11 +89,18 @@ export default function CitizenSignup() {
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="mb-8">
-          <Link to="/" className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
-            <span className="text-sm text-primary font-semibold">← Back to Home</span>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity"
+          >
+            <span className="text-sm text-primary font-semibold">
+              ← Back to Home
+            </span>
           </Link>
           <h1 className="text-3xl font-bold text-foreground">Create Account</h1>
-          <p className="text-slate-600 mt-2">Sign up to start reporting issues in your community</p>
+          <p className="text-slate-600 mt-2">
+            Sign up to start reporting issues in your community
+          </p>
         </div>
 
         <Card className="border-0 shadow-lg">
@@ -147,7 +159,9 @@ export default function CitizenSignup() {
                   onChange={handleChange}
                   className="mt-2"
                 />
-                <p className="text-xs text-slate-500 mt-1">You can update this later or let us auto-detect</p>
+                <p className="text-xs text-slate-500 mt-1">
+                  You can update this later or let us auto-detect
+                </p>
               </div>
 
               {/* Password */}
@@ -168,7 +182,10 @@ export default function CitizenSignup() {
 
               {/* Confirm Password */}
               <div>
-                <Label htmlFor="confirmPassword" className="text-sm font-medium">
+                <Label
+                  htmlFor="confirmPassword"
+                  className="text-sm font-medium"
+                >
                   Confirm Password
                 </Label>
                 <Input
@@ -183,8 +200,8 @@ export default function CitizenSignup() {
               </div>
 
               {/* Submit Button */}
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="w-full mt-6 font-semibold h-10"
                 disabled={loading}
               >
@@ -196,7 +213,10 @@ export default function CitizenSignup() {
             <div className="mt-6 text-center">
               <p className="text-sm text-slate-600">
                 Already have an account?{" "}
-                <Link to="/citizen-login" className="text-primary font-semibold hover:underline">
+                <Link
+                  to="/citizen-login"
+                  className="text-primary font-semibold hover:underline"
+                >
                   Log in
                 </Link>
               </p>
@@ -208,7 +228,10 @@ export default function CitizenSignup() {
         <div className="mt-6 text-center">
           <p className="text-sm text-slate-600">
             Are you a councillor?{" "}
-            <Link to="/councillor-login" className="text-primary font-semibold hover:underline">
+            <Link
+              to="/councillor-login"
+              className="text-primary font-semibold hover:underline"
+            >
               Log in here
             </Link>
           </p>

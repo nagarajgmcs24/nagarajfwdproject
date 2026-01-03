@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key-change-in-production";
+const JWT_SECRET =
+  process.env.JWT_SECRET || "your-secret-key-change-in-production";
 
 // Generate JWT token
 export function generateToken(userId, userType) {
@@ -18,7 +19,8 @@ export function verifyToken(token) {
 
 // Middleware to check if user is authenticated
 export function authenticateUser(req, res, next) {
-  const token = req.headers.authorization?.split(" ")[1] || req.headers.authorization;
+  const token =
+    req.headers.authorization?.split(" ")[1] || req.headers.authorization;
 
   if (!token) {
     return res.status(401).json({ message: "No token provided" });
@@ -36,7 +38,9 @@ export function authenticateUser(req, res, next) {
 // Middleware to check if user is a citizen
 export function isCitizen(req, res, next) {
   if (req.user?.userType !== "citizen") {
-    return res.status(403).json({ message: "Access denied. Citizen privileges required." });
+    return res
+      .status(403)
+      .json({ message: "Access denied. Citizen privileges required." });
   }
   next();
 }
@@ -44,7 +48,9 @@ export function isCitizen(req, res, next) {
 // Middleware to check if user is a councillor
 export function isCouncillor(req, res, next) {
   if (req.user?.userType !== "councillor") {
-    return res.status(403).json({ message: "Access denied. Councillor privileges required." });
+    return res
+      .status(403)
+      .json({ message: "Access denied. Councillor privileges required." });
   }
   next();
 }

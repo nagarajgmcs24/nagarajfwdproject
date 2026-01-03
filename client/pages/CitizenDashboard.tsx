@@ -18,12 +18,15 @@ export default function CitizenDashboard() {
       {/* Header */}
       <header className="border-b border-slate-200 bg-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <Link
+            to="/"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+          >
             <MapPin className="w-6 h-6 text-primary" />
             <h1 className="text-xl font-bold text-foreground">Fix My Ward</h1>
           </Link>
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             size="sm"
             onClick={handleLogout}
             className="flex items-center gap-2"
@@ -37,8 +40,12 @@ export default function CitizenDashboard() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Welcome Section */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-2">Welcome Back!</h2>
-          <p className="text-slate-600">Track your complaints and contribute to your community</p>
+          <h2 className="text-3xl font-bold text-foreground mb-2">
+            Welcome Back!
+          </h2>
+          <p className="text-slate-600">
+            Track your complaints and contribute to your community
+          </p>
         </div>
 
         {/* Action Buttons */}
@@ -49,10 +56,10 @@ export default function CitizenDashboard() {
               Report New Issue
             </Button>
           </Link>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             variant="outline"
-            onClick={() => window.location.href = "#statistics"}
+            onClick={() => (window.location.href = "#statistics")}
             className="w-full font-semibold"
           >
             View Statistics
@@ -64,10 +71,17 @@ export default function CitizenDashboard() {
           {complaints.length === 0 ? (
             <div className="py-12">
               <MapPin className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-foreground mb-2">No Complaints Yet</h3>
-              <p className="text-slate-600 mb-6">You haven't reported any issues yet. Help improve your community by reporting your first issue.</p>
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                No Complaints Yet
+              </h3>
+              <p className="text-slate-600 mb-6">
+                You haven't reported any issues yet. Help improve your community
+                by reporting your first issue.
+              </p>
               <Link to="/submit-complaint">
-                <Button className="font-semibold">Report Your First Issue</Button>
+                <Button className="font-semibold">
+                  Report Your First Issue
+                </Button>
               </Link>
             </div>
           ) : (

@@ -65,14 +65,23 @@ export default function CouncillorLogin() {
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="mb-8">
-          <Link to="/" className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
-            <span className="text-sm text-primary font-semibold">← Back to Home</span>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity"
+          >
+            <span className="text-sm text-primary font-semibold">
+              ← Back to Home
+            </span>
           </Link>
           <div className="flex items-center gap-3 mb-4">
             <Lock className="w-8 h-8 text-primary" />
-            <h1 className="text-3xl font-bold text-foreground">Ward Councillor</h1>
+            <h1 className="text-3xl font-bold text-foreground">
+              Ward Councillor
+            </h1>
           </div>
-          <p className="text-slate-600 mt-2">Access your ward's complaint management dashboard</p>
+          <p className="text-slate-600 mt-2">
+            Access your ward's complaint management dashboard
+          </p>
         </div>
 
         <Card className="border-0 shadow-lg">
@@ -86,7 +95,9 @@ export default function CouncillorLogin() {
 
             <div className="mb-6 p-4 bg-primary/5 border border-primary/20 rounded-lg">
               <p className="text-sm text-slate-700">
-                <span className="font-semibold">Note:</span> Only registered councillors can log in. Contact your administrative office if you need credentials.
+                <span className="font-semibold">Note:</span> Only registered
+                councillors can log in. Contact your administrative office if
+                you need credentials.
               </p>
             </div>
 
@@ -131,8 +142,8 @@ export default function CouncillorLogin() {
               </div>
 
               {/* Submit Button */}
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="w-full mt-6 font-semibold h-10"
                 disabled={loading}
               >
@@ -144,7 +155,10 @@ export default function CouncillorLogin() {
             <div className="mt-6 pt-6 border-t border-slate-200 text-center">
               <p className="text-sm text-slate-600">
                 Are you a citizen?{" "}
-                <Link to="/citizen-login" className="text-primary font-semibold hover:underline">
+                <Link
+                  to="/citizen-login"
+                  className="text-primary font-semibold hover:underline"
+                >
                   Log in here
                 </Link>
               </p>
@@ -155,7 +169,10 @@ export default function CouncillorLogin() {
         {/* Security Notice */}
         <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
           <p className="text-xs text-slate-700 leading-relaxed">
-            <span className="font-semibold">🔒 Security:</span> This portal uses secure authentication. Your credentials are encrypted and protected. For security reasons, no password reset links will be sent. Contact your administrative office for password changes.
+            <span className="font-semibold">🔒 Security:</span> This portal uses
+            secure authentication. Your credentials are encrypted and protected.
+            For security reasons, no password reset links will be sent. Contact
+            your administrative office for password changes.
           </p>
         </div>
       </div>
