@@ -7,6 +7,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import CitizenSignup from "./pages/CitizenSignup";
+import CitizenLogin from "./pages/CitizenLogin";
+import CouncillorLogin from "./pages/CouncillorLogin";
+import CitizenDashboard from "./pages/CitizenDashboard";
+import CouncillorDashboard from "./pages/CouncillorDashboard";
+import SubmitComplaint from "./pages/SubmitComplaint";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,6 +25,12 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/citizen-signup" element={<CitizenSignup />} />
+          <Route path="/citizen-login" element={<CitizenLogin />} />
+          <Route path="/councillor-login" element={<CouncillorLogin />} />
+          <Route path="/citizen-dashboard" element={<CitizenDashboard />} />
+          <Route path="/councillor-dashboard" element={<CouncillorDashboard />} />
+          <Route path="/submit-complaint" element={<SubmitComplaint />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
