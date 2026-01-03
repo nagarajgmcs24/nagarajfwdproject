@@ -1,3 +1,4 @@
+import "dotenv/config";
 import mongoose from "mongoose";
 import Councillor from "../models/Councillor.js";
 import { connectDB } from "../db.js";
@@ -50,6 +51,7 @@ const sampleCouncillors = [
 async function seedCouncillors() {
   try {
     await connectDB();
+    console.log("ENV CHECK:", process.env.MONGO_URI);
 
     // Clear existing councillors (optional - comment out to preserve existing data)
     // await Councillor.deleteMany({});
@@ -58,14 +60,10 @@ async function seedCouncillors() {
 
     for (const councillorData of sampleCouncillors) {
       // Check if councillor already exists
-      const existingCouncillor = await Councillor.findOne({
-        email: councillorData.email,
-      });
+      const existingCouncillor = await Councillor.findOne({ email: councillorData.email });
 
       if (existingCouncillor) {
-        console.log(
-          `⏭️  Councillor ${councillorData.email} already exists. Skipping...`,
-        );
+        console.log(`⏭️  Councillor ${councillorData.email} already exists. Skipping...`);
         continue;
       }
 
@@ -81,9 +79,7 @@ async function seedCouncillors() {
       });
 
       await councillor.save();
-      console.log(
-        `✅ Created councillor: ${councillorData.name} (${councillorData.wardNumber})`,
-      );
+      console.log(`✅ Created councillor: ${councillorData.name} (${councillorData.wardNumber})`);
     }
 
     console.log("\n🎉 Councillor seeding completed!");
@@ -95,7 +91,7 @@ async function seedCouncillors() {
       console.log(`Ward: ${councillor.wardNumber}`);
       console.log("----------------------------------------");
     });
-
+      
     process.exit(0);
   } catch (error) {
     console.error("❌ Seeding error:", error);
